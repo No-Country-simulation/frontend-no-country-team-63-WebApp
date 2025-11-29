@@ -1,7 +1,7 @@
-export interface RegisterType{
-    email: string
-    name: string
-    lastname: string
-    birthdate: string
-    password: string
+export interface RegisterPerson {
+  nombre: string;
+  apellido: string;
+  fechaNacimiento: string;
+  email: string;
+  password: string;
 }

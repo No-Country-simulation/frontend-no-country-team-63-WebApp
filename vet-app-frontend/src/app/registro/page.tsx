@@ -11,7 +11,7 @@ const login = () => {
       <section className="g-bg-boxshadow rounded-2xl ">
         <NavInicio />
 
-        <form className="">
+        <form className=""> 
           <div className="flex flex-col items-center px-[2rem] py-[3rem] gap-2">
            <InputComponent placeholder="Email" type="email"/>
            <InputComponent placeholder="Nombre" type="text"/>

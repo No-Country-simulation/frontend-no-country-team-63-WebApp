@@ -1,11 +1,11 @@
-import { RegisterType } from "@/_types/register";
+import { RegisterPerson } from "@/_types/register";
 import { api_general } from "../api-general";
 
 
 
-export const postRegister = async (data: RegisterType) => {
+export const postRegisterPerson = async (data: RegisterPerson) => {
   try {
-    const res = await api_general.post("/", data);
+    const res = await api_general.post("/auth/register", data);
     console.log("Se creó el usuario");
     return res.data;
   } catch (error) {

@@ -2,9 +2,7 @@
 
 import NavInicio from "@/_components/NavInicio";
 import ButtonComponent from "@/_components/ui/ButtonComponent";
-import ButtonGreen from "@/_components/ui/ButtonGreen";
 import InputComponent from "@/_components/ui/InputComponent";
-import { Button } from "@/components/ui/button";
 
 const login = () => {
   return (
