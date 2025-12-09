@@ -1,32 +1,25 @@
 {
   "recordatorio": [
     {
-      "id": "c49f",
-      "nombreEvento": "Pancho",
+      "nombreEvento": "Panchito Peludo",
       "tipoEvento": "Desparacitacion",
       "fecha": "2025-12-11",
-      "hora": "18:34"
+      "hora": "18:34",
+      "id": "c49f"
     },
     {
-      "id": "6532",
-      "nombreEvento": "Jorjito",
+      "nombreEvento": "Jorgito Peludo",
       "tipoEvento": "Lavado de pelo",
       "fecha": "2025-12-18",
-      "hora": "20:40"
+      "hora": "20:40",
+      "id": "6532"
     },
     {
-      "id": "301a",
-      "nombreEvento": "Bruno",
+      "id": "2658",
+      "nombreEvento": "Manchas",
       "tipoEvento": "Vacunacion",
-      "fecha": "2025-12-26",
-      "hora": "20:56"
-    },
-    {
-      "id": "18b8",
-      "nombreEvento": "Brunito",
-      "tipoEvento": "Corte de uñas",
-      "fecha": "2025-12-26",
-      "hora": "20:56"
+      "fecha": "2025-12-25",
+      "hora": "22:37"
     }
   ]
 }

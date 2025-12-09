@@ -111,7 +111,7 @@ export default function LoginBox() {
         if (status_res === 200) {
           console.log(status_res)
           alert("se inició sesion")
-          router.push("/layout/dashboard");
+          router.push("/layout");
         } else if (status_res === 403) {
           alert("Pusiste mal un dato, revisarlo");
         }

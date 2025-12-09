@@ -10,27 +10,47 @@ import { data, mockRecordatorios } from "@/mock/json-recordatorios";
 import { RecordatoriosMutations } from "@/service/mutations/recordatorio-mutation";
 import { useModalStore } from "@/store/modal-store";
 
-//  interface ActionsColumnsProps {
-//   handleEdit: ({ entityTypes, Type, data }: ModalProps) => void;
-//   // handleDelete: (id: string) => void;
-//   handleDetails?: ({ entityTypes, Type, data }: ModalProps) => void;
-// }
-
 const layout = () => {
   const { openModal } = useModalStore();
-  const { GetQueryRecordatorio , mutationDeleteRecordatorio } = RecordatoriosMutations();
-  // const { data: dataApi } = GetQueryRecordatorio;
+  const { GetQueryRecordatorio, mutationDeleteRecordatorio } =
+    RecordatoriosMutations();
+  const { data: dataApi } = GetQueryRecordatorio;
 
-  // console.log(dataApi);
-
+  console.log(dataApi);
+  const datamock = [
+    {
+      id: "esperando..",
+      nombreEvento: "esperando..",
+      tipoEvento: "esperando..",
+      fecha: "esperando..",
+      hora: "esperando..",
+    },
+    {
+      id: "esperando..",
+      nombreEvento: "esperando..",
+      tipoEvento: "esperando..",
+      fecha: "esperando..",
+      hora: "esperando..",
+    },
+    {
+      id: "esperando..",
+      nombreEvento: "esperando..",
+      tipoEvento: "esperando..",
+      fecha: "esperando..",
+      hora: "esperando..",
+    },
+  ];
   return (
-    <div>
+    <div className="">
       <NavbarLayout />
-      <div className="flex justify-between gap-[2rem] max-w-[1000px] mx-auto w-full h-[10vh] relative pt-[1rem]">
+      <div
+        className=" flex flex-col md:flex-row justify-between gap-[2rem] items-center max-w-[1000px]
+       mx-auto w-full h-[20vh] md:h-[10vh]   relative pt-[1rem] px-[2rem]  "
+      >
         <h2 className="text-[#1A5D63] text-[2rem]">Recordatorios</h2>
         <ButtonGreen
           type="submit"
-          className="font-bold"
+          className="font-bold flex "
           onClick={() =>
             openModal({
               entityTypes: "recordatorios",
@@ -42,78 +62,37 @@ const layout = () => {
         </ButtonGreen>
       </div>
 
-      <div className="pt-[2rem]">
+      <div className="pt-[2rem] px-[2rem]">
         {GetQueryRecordatorio.isLoading && (
           <DataTableDemo
             columns={columns({
               handleEdit: openModal,
               handleDelete: mutationDeleteRecordatorio.mutate,
+              handleDetails: openModal
             })}
             // data={mockRecordatorios}
             // data={data}
-            data={[
-              {
-                id: "esperando..",
-                nombreEvento: "esperando..",
-                tipoEvento: "esperando..",
-                fecha: "esperando..",
-                hora: "esperando..",
-              },
-              {
-                id: "esperando..",
-                nombreEvento: "esperando..",
-                tipoEvento: "esperando..",
-                fecha: "esperando..",
-                hora: "esperando..",
-              },
-              {
-                id: "esperando..",
-                nombreEvento: "esperando..",
-                tipoEvento: "esperando..",
-                fecha: "esperando..",
-                hora: "esperando..",
-              }
-            ]}
-          />
-        )}
+            data={datamock}
+            />
+          )}
         {GetQueryRecordatorio.isError && (
           <DataTableDemo
-            columns={columns({
-              handleEdit: openModal,
-              handleDelete: mutationDeleteRecordatorio.mutate,
-            })}
-            // data={mockRecordatorios}
-            // data={data}
-            data={[
-              {
-                id: "esperando..",
-                nombreEvento: "esperando..",
-                tipoEvento: "esperando..",
-                fecha: "esperando..",
-                hora: "esperando..",
-              },
-              {
-                id: "esperando..",
-                nombreEvento: "esperando..",
-                tipoEvento: "esperando..",
-                fecha: "esperando..",
-                hora: "esperando..",
-              },
-              {
-                id: "esperando..",
-                nombreEvento: "esperando..",
-                tipoEvento: "esperando..",
-                fecha: "esperando..",
-                hora: "esperando..",
-              }
-            ]}
+          columns={columns({
+            handleEdit: openModal,
+            handleDelete: mutationDeleteRecordatorio.mutate,
+            handleDetails: openModal
+          })}
+          // data={mockRecordatorios}
+          // data={data}
+          data={datamock}
           />
         )}
         {GetQueryRecordatorio.data && (
           <DataTableDemo
-            columns={columns({
-              handleEdit: openModal,
-              handleDelete: mutationDeleteRecordatorio.mutate,
+          columns={columns({
+            handleEdit: openModal,
+            handleDelete: mutationDeleteRecordatorio.mutate,
+            handleDetails: openModal
             })}
             // data={mockRecordatorios}
             // data={data}

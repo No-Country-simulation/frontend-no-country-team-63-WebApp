@@ -9,21 +9,15 @@ import { CheckboxItem } from "@radix-ui/react-dropdown-menu";
 import { ArrowUpDown } from "lucide-react";
 import { PiBoneDuotone } from "react-icons/pi";
 import { ActionsColumnsProps } from "@/types/TypesActions";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export const columns = ({
   handleEdit: handEdit,
   handleDelete: handDel,
+  handleDetails: handDet
 }: ActionsColumnsProps): ColumnDef<IRecordatorios>[] => [
-  // handleDelete: () => void,
-  // export const columns: ColumnDef<Payment>[] = [
-  // {
-  //   accessorKey: "id",
-  //   header: "id",
-  //   cell: ({ row }) => {
-  //     const { id } = row.original;
-  //     return <div className="capitalize">#{id}</div>;
-  //   },
-  // },
+
   {
     accessorKey: "nombreEvento",
     header: "Nombre animal",
@@ -56,35 +50,23 @@ export const columns = ({
       return <div className="capitalize">{hora}</div>;
     },
   },
-  // {
-  //   accessorKey: "email",
 
-  //   header: "Tipo evento",
-  //     // <div className="capitalize">{nombre}</div>
-
-  //   cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
-  // },
-  // {
-  //   accessorKey: "amount",
-  //   header: () => <div className="text-right">Amount</div>,
-  //   cell: ({ row }) => {
-  //     const amount = parseFloat(row.getValue("amount"));
-  //     // Format the amount as a dollar amount
-  //     const formatted = new Intl.NumberFormat("en-US", {
-  //       style: "currency",
-  //       currency: "USD",
-  //     }).format(amount);
-  //     return <div className="text-right font-medium">{formatted}</div>;
-  //   },
-  // },
   {
     id: "actions",
     header: "Acciones",
     enableHiding: false,
     cell: ({ row }) => {
+      const router = useRouter();
       const { id } = row.original;
       return (
         <DropDownCustom
+        handleDetails={ () =>   
+          //router.push(`/layout/dashboard/${id}`)
+          handDet({
+            entityTypes: "details",
+            Type: "ver"
+          })
+        }
           handleEdit={() =>
             handEdit({
               entityTypes: "recordatorios",

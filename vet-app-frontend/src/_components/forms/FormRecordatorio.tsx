@@ -1,5 +1,4 @@
 "use client";
-import { useRecordatorioForm } from "../submits-auth/SubmitRecordatorio";
 import {
   Form,
   FormControl,
@@ -35,25 +34,25 @@ const FormRecordatorio = () => {
     },
   });
   function onSubmit(values: z.infer<typeof recordatoriosformSchema>) {
-    
-    // if ((data as IRecordatorios).id) {
-    //   mutationPutRecordatorios.mutate({
-    //     body: values,
-    //     id: (data as IRecordatorios).id,
-    //   });
-    //   console.log(values);
-    // }
+    if ( Type === "edit" && (data as IRecordatorios).id) {
+      const put_object = {
+        id: (data as IRecordatorios).id,
+        body: values,
+      };
+      mutationPutRecordatorios.mutate(put_object);
+      console.log("accion editar");
+    }
     mutationPostRecordatorios.mutate(values);
-    console.log(values);
-    
+    console.log("accion crear");
   }
-  
+
   useEffect(() => {
     if (data) {
-      console.log(data);
+      // console.log(data);
       form.reset(data);
     }
   }, [data, form]);
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

@@ -4,7 +4,7 @@ import {
   postRecordatorios,
   getRecordatorios,
   deleteRecordatorios,
-  putRecordatorios
+  putRecordatorios,
 } from "../use-cases/reminder-use-case";
 import { IRecordatorios } from "@/types/recordatorios";
 
@@ -45,9 +45,9 @@ export const RecordatoriosMutations = () => {
       alert("de eliminó el recordatorio");
     },
   });
- const mutationPutRecordatorios = useMutation({
-    mutationFn: ({data}: {data: IRecordatorios}) => {
-      return putRecordatorios({data});
+  const mutationPutRecordatorios = useMutation({
+    mutationFn: ({ id, body }: { id: string; body: IRecordatorios }) => {
+      return putRecordatorios({ id, body });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -62,6 +62,6 @@ export const RecordatoriosMutations = () => {
     mutationPostRecordatorios,
     GetQueryRecordatorio,
     mutationDeleteRecordatorio,
-    mutationPutRecordatorios
+    mutationPutRecordatorios,
   };
 };

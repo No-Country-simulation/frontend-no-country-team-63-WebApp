@@ -7,6 +7,7 @@ const FormsGeneral = {
   // acá se pondrian todos los componentes de formulario existentes
   recordatorios: lazy(() => import("@/_components/forms/FormRecordatorio")),
   alert: lazy(() => import("@/_components/ui-reusable/AlertComponent")),
+  details: lazy(() => import("@/_components/ui-reusable/DetailsComponent")),
 };
 // {children}: {children: React.ReactNode}
 const CustomModalGeneral = ( ) => {

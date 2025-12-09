@@ -1,7 +1,5 @@
-import {  api_mock } from "../api-general";
+import { api_mock } from "../api-general";
 import { IRecordatorios } from "@/types/recordatorios";
-
-
 
 export const postRecordatorios = async (data: IRecordatorios) => {
   try {
@@ -22,9 +20,14 @@ export const getRecordatorios = async () => {
     throw error;
   }
 };
-export const putRecordatorios = async ({data}:{data: IRecordatorios}  ) => {
+interface PutData {
+  id: string;
+  body: IRecordatorios;
+}
+
+export const putRecordatorios = async ({ id, body }: PutData) => {
   try {
-    const res = await api_mock.put("/recordatorio", data);
+    const res = await api_mock.put(`/recordatorio/${id}`, body);
     return res.data;
   } catch (error) {
     console.log(error);

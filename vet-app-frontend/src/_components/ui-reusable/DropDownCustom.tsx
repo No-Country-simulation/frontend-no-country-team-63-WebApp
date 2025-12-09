@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import {
   DropdownMenu,
@@ -11,11 +11,15 @@ import { FaPencilAlt } from "react-icons/fa";
 import { BsTrash } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
 import { CustomOptionsTypes } from "@/types/TypesActions";
+import { FaEye } from "react-icons/fa";
 
-
-
-const DropDownCustom = ({ handleDelete, handleEdit, children }: CustomOptionsTypes) => {
-// const DropDownCustom = ({children}: {children: React.ReactNode} ) => {
+const DropDownCustom = ({
+  handleDelete,
+  handleEdit,
+  handleDetails,
+  children,
+}: CustomOptionsTypes) => {
+  // const DropDownCustom = ({children}: {children: React.ReactNode} ) => {
   return (
     // absolute top-[3rem] right-[1rem]
     <div className="">
@@ -26,7 +30,6 @@ const DropDownCustom = ({ handleDelete, handleEdit, children }: CustomOptionsTyp
             className="cursor-pointer  hover:bg-[#f1f1f1] rounded-full "
           >
             {children}
-            
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -40,6 +43,16 @@ const DropDownCustom = ({ handleDelete, handleEdit, children }: CustomOptionsTyp
             <div className="flex justify-between items-center gap-2">
               <p>Editar</p>
               <FaPencilAlt />
+            </div>
+          </DropdownMenuItem>
+          <hr className="text-[#8a8888]" />
+          <DropdownMenuItem
+            className="py-1 cursor-pointer cursor-pointer"
+            onClick={handleDetails}
+          >
+            <div className="flex justify-between items-center gap-2">
+              <p>Ver detalles</p>
+              <FaEye />
             </div>
           </DropdownMenuItem>
           <hr className="text-[#8a8888]" />
