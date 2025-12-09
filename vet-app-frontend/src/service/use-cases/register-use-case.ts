@@ -1,4 +1,4 @@
-import { RegisterPerson } from "@/_types/register";
+import { RegisterPerson } from "@/types/register";
 import { api_general } from "../api-general";
 
 

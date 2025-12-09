@@ -1,0 +1,32 @@
+{
+  "recordatorio": [
+    {
+      "id": "c49f",
+      "nombreEvento": "Pancho",
+      "tipoEvento": "Desparacitacion",
+      "fecha": "2025-12-11",
+      "hora": "18:34"
+    },
+    {
+      "id": "6532",
+      "nombreEvento": "Jorjito",
+      "tipoEvento": "Lavado de pelo",
+      "fecha": "2025-12-18",
+      "hora": "20:40"
+    },
+    {
+      "id": "301a",
+      "nombreEvento": "Bruno",
+      "tipoEvento": "Vacunacion",
+      "fecha": "2025-12-26",
+      "hora": "20:56"
+    },
+    {
+      "id": "18b8",
+      "nombreEvento": "Brunito",
+      "tipoEvento": "Corte de uñas",
+      "fecha": "2025-12-26",
+      "hora": "20:56"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 "use client";
 
 import NavInicio from "@/_components/NavInicio";
-import ButtonComponent from "@/_components/ui/ButtonComponent";
-import InputComponent from "@/_components/ui/InputComponent";
+import ButtonComponent from "@/_components/ui-reusable/ButtonComponent";
+import InputComponent from "@/_components/ui-reusable/InputComponent";
 import { Button } from "@/components/ui/button";
 
 const login = () => {

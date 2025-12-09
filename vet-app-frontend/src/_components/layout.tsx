@@ -1,5 +1,5 @@
 // app/layout.tsx
-import './globals.css'; // ajusta ruta si pones styles en otra carpeta
+import '../app/style.css'; // ajusta ruta si pones styles en otra carpeta
 import React from 'react';
 
 export const metadata = {

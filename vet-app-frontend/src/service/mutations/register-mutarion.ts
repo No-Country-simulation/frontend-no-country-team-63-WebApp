@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { postRegisterPerson } from "../use-cases/register-use-case";
-import { RegisterPerson } from "@/_types/register";
+import { RegisterPerson } from "@/types/register";
 
 export const GeneralMutations = () => {
   // const router = useRouter();
