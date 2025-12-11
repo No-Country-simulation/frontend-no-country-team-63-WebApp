@@ -1,0 +1,1456 @@
+{
+  "info": {
+    "name": "Pet Care",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "item": [
+            {
+              "name": "Exception",
+              "item": []
+            },
+            {
+              "name": "OK",
+              "item": [
+                {
+                  "name": "User 1",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/login",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "login"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"ana.garcia@example.com\",\n  \"password\": \"miContraseñaFuerte!\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 2",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/login",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "login"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"carlos.perez@example.com\",\n  \"password\": \"miContraseñaSegura!\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 3",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/login",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "login"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"maria.lopez@example.com\",\n  \"password\": \"passwordFuerte123!\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 4",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/login",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "login"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"laura.gomez@example.com\",\n  \"password\": \"SeguridadAlta789!\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Refresh Token",
+          "item": [
+            {
+              "name": "Exception",
+              "item": []
+            },
+            {
+              "name": "OK",
+              "item": [
+                {
+                  "name": "Example 1",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/refresh",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "refresh"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6InJlZnJlc2giLCJpYXQiOjE3NjMzMTg3MDAsImV4cCI6MTc2MzMyOTUwMH0.vJcIfumvN7y4jN1iUQjyRVlnfLjMomW2JN0RmPlMfuU\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Register",
+          "item": [
+            {
+              "name": "Exception",
+              "item": []
+            },
+            {
+              "name": "OK",
+              "item": [
+                {
+                  "name": "User 1",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/register",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "register"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Ana\",\n  \"apellido\": \"Garcia\",\n  \"fechaNacimiento\": \"1985-03-22\",\n  \"email\": \"ana.garcia@example.com\",\n  \"password\": \"miContraseñaFuerte!\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 2",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/register",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "register"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"nombre\": \"Carlos\",\n    \"apellido\": \"Perez\",\n    \"fechaNacimiento\": \"1990-07-15\",\n    \"email\": \"carlos.perez@example.com\",\n    \"password\": \"miContraseñaSegura!\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 3",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/register",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "register"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"nombre\": \"Maria\",\n    \"apellido\": \"Lopez\",\n    \"fechaNacimiento\": \"1988-11-05\",\n    \"email\": \"maria.lopez@example.com\",\n    \"password\": \"passwordFuerte123!\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 4",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/auth/register",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "auth",
+                        "register"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"nombre\": \"Laura\",\n    \"apellido\": \"Gomez\",\n    \"fechaNacimiento\": \"1987-09-10\",\n    \"email\": \"laura.gomez@example.com\",\n    \"password\": \"SeguridadAlta789!\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Medicamento",
+      "item": [
+        {
+          "name": "Create",
+          "item": [
+            {
+              "name": "Exception",
+              "item": []
+            },
+            {
+              "name": "OK",
+              "item": [
+                {
+                  "name": "Medicamento 1",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "save"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Vacuna Antirrabica\",\n  \"tipo\": \"VACUNA\",\n  \"fabricante\": \"Veterinaria Salud Animal\",\n  \"intervaloDosis\": 12,\n  \"descripcion\": \"Vacuna destinada a prevenir la rabia en mascotas.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 2",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "save"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Desparasitante Canino\",\n  \"tipo\": \"DESPARACITANTE\",\n  \"fabricante\": \"Farmacia Veterinaria\",\n  \"intervaloDosis\": 6,\n  \"descripcion\": \"Eficaz contra lombrices intestinales en perros.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 3",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "save"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Vacuna Contra el Moquillo\",\n  \"tipo\": \"VACUNA\",\n  \"fabricante\": \"Sanofi Vet\",\n  \"intervaloDosis\": 12,\n  \"descripcion\": \"Protege a los perros contra el moquillo canino.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 4",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "save"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Desparasitante para Gatos\",\n  \"tipo\": \"DESPARACITANTE\",\n  \"fabricante\": \"PetCare\",\n  \"intervaloDosis\": 3,\n  \"descripcion\": \"Previene y trata los parásitos intestinales en gatos.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 5",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "save"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Vacuna Polivalente\",\n  \"tipo\": \"VACUNA\",\n  \"fabricante\": \"VetMed\",\n  \"intervaloDosis\": 12,\n  \"descripcion\": \"Immuniza contra múltiples enfermedades felinas.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 6",
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/save",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "save"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Desparasitante de Amplio Espectro\",\n  \"tipo\": \"DESPARACITANTE\",\n  \"fabricante\": \"Animal Health\",\n  \"intervaloDosis\": 6,\n  \"descripcion\": \"Eficaz contra diferentes tipos de parásitos en mascotas.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Delete",
+          "item": [
+            {
+              "name": "Exception",
+              "item": []
+            },
+            {
+              "name": "OK",
+              "item": [
+                {
+                  "name": "Medicamento 1",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/delete/1",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "delete",
+                        "1"
+                      ],
+                      "query": [],
+                      "variable": []
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 3",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/delete/3",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "delete",
+                        "3"
+                      ],
+                      "query": [],
+                      "variable": []
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 6",
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MTE3NSwiZXhwIjoxNzY0MTkyMDc1fQ.EfWqplIoUYehcu2t7ZIr2gkzYwKCgsYk86YeFPo68F4",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/delete/6",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "delete",
+                        "6"
+                      ],
+                      "query": [],
+                      "variable": []
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Get",
+          "item": [
+            {
+              "name": "Exception",
+              "item": []
+            },
+            {
+              "name": "OK",
+              "item": [
+                {
+                  "name": "Por Tipo",
+                  "item": [
+                    {
+                      "name": "DESPARACITANTE",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "disabled": false,
+                            "type": "default"
+                          }
+                        ],
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MDUzNiwiZXhwIjoxNzY0MTkxNDM2fQ.C_g3Xn6SCn2EHsevYBOBXCGqJkfPfWl03Db08sOLFPY",
+                            "type": "string"
+                          }
+                        },
+                        "description": "",
+                        "url": {
+                          "raw": "http://localhost:8081/medicament/DESPARACITANTE?page=0&size=3&orderBy=true",
+                          "protocol": "http",
+                          "host": [
+                            "localhost:8081"
+                          ],
+                          "path": [
+                            "medicament",
+                            "DESPARACITANTE"
+                          ],
+                          "query": [
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "3"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": []
+                        }
+                      }
+                    },
+                    {
+                      "name": "VACUNA",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "disabled": false,
+                            "type": "default"
+                          }
+                        ],
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MDUzNiwiZXhwIjoxNzY0MTkxNDM2fQ.C_g3Xn6SCn2EHsevYBOBXCGqJkfPfWl03Db08sOLFPY",
+                            "type": "string"
+                          }
+                        },
+                        "description": "",
+                        "url": {
+                          "raw": "http://localhost:8081/medicament/VACUNA?page=0&size=3&orderBy=true",
+                          "protocol": "http",
+                          "host": [
+                            "localhost:8081"
+                          ],
+                          "path": [
+                            "medicament",
+                            "VACUNA"
+                          ],
+                          "query": [
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "3"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": []
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "name": "Sin Tipo",
+                  "item": [
+                    {
+                      "name": "Medicamentos Page 1",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "disabled": false,
+                            "type": "default"
+                          }
+                        ],
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MDUzNiwiZXhwIjoxNzY0MTkxNDM2fQ.C_g3Xn6SCn2EHsevYBOBXCGqJkfPfWl03Db08sOLFPY",
+                            "type": "string"
+                          }
+                        },
+                        "description": "",
+                        "url": {
+                          "raw": "http://localhost:8081/medicament/?page=0&size=3&orderBy=true",
+                          "protocol": "http",
+                          "host": [
+                            "localhost:8081"
+                          ],
+                          "path": [
+                            "medicament",
+                            ""
+                          ],
+                          "query": [
+                            {
+                              "key": "page",
+                              "value": "0"
+                            },
+                            {
+                              "key": "size",
+                              "value": "3"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": []
+                        }
+                      }
+                    },
+                    {
+                      "name": "Medicamentos Page 2",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "disabled": false,
+                            "type": "default"
+                          }
+                        ],
+                        "auth": {
+                          "type": "bearer",
+                          "bearer": {
+                            "key": "token",
+                            "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MDUzNiwiZXhwIjoxNzY0MTkxNDM2fQ.C_g3Xn6SCn2EHsevYBOBXCGqJkfPfWl03Db08sOLFPY",
+                            "type": "string"
+                          }
+                        },
+                        "description": "",
+                        "url": {
+                          "raw": "http://localhost:8081/medicament/?page=1&size=3&orderBy=true",
+                          "protocol": "http",
+                          "host": [
+                            "localhost:8081"
+                          ],
+                          "path": [
+                            "medicament",
+                            ""
+                          ],
+                          "query": [
+                            {
+                              "key": "page",
+                              "value": "1"
+                            },
+                            {
+                              "key": "size",
+                              "value": "3"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "true"
+                            }
+                          ],
+                          "variable": []
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Update",
+          "item": [
+            {
+              "name": "Exception",
+              "item": []
+            },
+            {
+              "name": "OK",
+              "item": [
+                {
+                  "name": "Medicamento 2",
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/update/2",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "update",
+                        "2"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Desparasitante Canino Mejorado\",\n  \"tipo\": \"DESPARACITANTE\",\n  \"fabricante\": \"Farmacia Veterinaria Avanzada\",\n  \"intervaloDosis\": 5,\n  \"descripcion\": \"Desparasitante mejorado contra lombrices intestinales en perros.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 4",
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/update/4",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "update",
+                        "4"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Desparasitante Efectivo para Gatos\",\n  \"tipo\": \"DESPARACITANTE\",\n  \"fabricante\": \"PetCare Plus\",\n  \"intervaloDosis\": 4,\n  \"descripcion\": \"Desparasitante revisado para un mejor control de parásitos.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "Medicamento 5",
+                  "request": {
+                    "method": "PUT",
+                    "header": [],
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/medicament/update/5",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "medicament",
+                        "update",
+                        "5"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"nombre\": \"Vacuna Polivalente Avanzada\",\n  \"tipo\": \"VACUNA\",\n  \"fabricante\": \"VetMed Nueva Fórmula\",\n  \"intervaloDosis\": 10,\n  \"descripcion\": \"Nueva versión que immuniza contra más enfermedades felinas.\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Delete",
+          "item": [
+            {
+              "name": "User Login",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "disabled": false,
+                    "type": "default"
+                  }
+                ],
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "key": "token",
+                    "value": "",
+                    "type": "string"
+                  }
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8081/user/delete",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8081"
+                  ],
+                  "path": [
+                    "user",
+                    "delete"
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update",
+          "item": [
+            {
+              "name": "Password",
+              "item": [
+                {
+                  "name": "User 3",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/user/update/password",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "user",
+                        "update",
+                        "password"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"password\": \"claveSecretaUser3\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 6",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/user/update/password",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "user",
+                        "update",
+                        "password"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"password\": \"claveSecretaUser6\"\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Email",
+              "item": [
+                {
+                  "name": "User 1",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/user/update/email",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "user",
+                        "update",
+                        "email"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"ana@example.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "User 2",
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "disabled": false,
+                        "type": "default"
+                      }
+                    ],
+                    "auth": {
+                      "type": "bearer",
+                      "bearer": {
+                        "key": "token",
+                        "value": "",
+                        "type": "string"
+                      }
+                    },
+                    "description": "",
+                    "url": {
+                      "raw": "http://localhost:8081/user/update/email",
+                      "protocol": "http",
+                      "host": [
+                        "localhost:8081"
+                      ],
+                      "path": [
+                        "user",
+                        "update",
+                        "email"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"email\": \"carlos@example.com\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "name": "User",
+              "item": []
+            }
+          ]
+        },
+        {
+          "name": "Get",
+          "item": [
+            {
+              "name": "User Login",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "disabled": false,
+                    "type": "default"
+                  }
+                ],
+                "auth": {
+                  "type": "bearer",
+                  "bearer": {
+                    "key": "token",
+                    "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhbmEuZ2FyY2lhQGV4YW1wbGUuY29tIiwidHlwZSI6ImFjY2VzcyIsImlhdCI6MTc2NDE5MDIxNiwiZXhwIjoxNzY0MTkxMTE2fQ.tC_h8UrXm7I7pnF3IZBgPS2XFXNCARmQrS8hW50JMGE",
+                    "type": "string"
+                  }
+                },
+                "description": "",
+                "url": {
+                  "raw": "http://localhost:8081/user/",
+                  "protocol": "http",
+                  "host": [
+                    "localhost:8081"
+                  ],
+                  "path": [
+                    "user",
+                    ""
+                  ],
+                  "query": [],
+                  "variable": []
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": []
+}

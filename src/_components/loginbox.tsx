@@ -1,30 +1,20 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Form } from "react-hook-form";
 
-import ButtonComponent from "./ui-reusable/ButtonComponent";
-import InputComponent from "./ui-reusable/InputComponent";
-import { RegisterPerson } from "@/types/register";
-import { form_state_register } from "@/mock/mock";
-import { api_general_root } from "@/service/api-general";
-import LabelComponent from "./ui-reusable/LabelComponent";
-// import { useRegisterForm } from "./submits-auth/SubmitRecordatorio";
-import {
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
+import ButtonComponent from "./ui/ButtonComponent";
+import InputComponent from "./ui/InputComponent";
+import { RegisterPerson } from "@/_types/register";
+import { form_state_register} from "@/_mock/mock";
+import { api_general_root } from "@/_service/api-general";
+import LabelComponent from "./ui/LabelComponent";
 
 export default function LoginBox() {
   const [tab, setTab] = useState<"login" | "register">("login");
-  const router = useRouter();
 
-  const [forM, setform] = useState<RegisterPerson>(form_state_register);
-  // const { form, onSubmit } = useRegisterForm();
+  const [form, setform] = useState<RegisterPerson>(form_state_register);
+
   // real vh fix
   useEffect(() => {
     function updateVH() {
@@ -45,7 +35,7 @@ export default function LoginBox() {
 
   const HandleChange = (e: any) => {
     setform({
-      ...forM,
+      ...form,
       [e.target.name]: e.target.value,
     });
   };
@@ -72,17 +62,7 @@ export default function LoginBox() {
     };
 
     fetch(`${api_general_root}/auth/register`, options)
-      .then( async (req) => {
-        const res_status = req.status
-        const data = await req.json()
-        console.log(data)
-        if (res_status === 201) {
-          console.log(res_status)
-          alert("se registró el usuario correctamente ✔")
-          router.push("/");
-        } 
-        return data
-      })
+      .then((req) => req.json())
       .then((res) => console.log(res));
   };
 
@@ -104,21 +84,8 @@ export default function LoginBox() {
     };
 
     fetch(`${api_general_root}/auth/login`, options)
-      .then(async (req) => {
-        const status_res = req.status;
-        const data = await req.json();
-        
-        if (status_res === 200) {
-          console.log(status_res)
-          alert("se inició sesion")
-          router.push("/layout");
-        } else if (status_res === 403) {
-          alert("Pusiste mal un dato, revisarlo");
-        }
-        return data;
-      })
-      .then((res) => console.log(res))
-      .catch(err => console.error(err))
+      .then((req) => req.json())
+      .then((res) => console.log(res));
   };
 
   return (
@@ -146,14 +113,14 @@ export default function LoginBox() {
         <InputComponent
           onChange={HandleChange}
           name="email"
-          value={forM.email}
+          value={form.email}
           type="email"
           placeholder="Email"
         />
         <InputComponent
           onChange={HandleChange}
           name="password"
-          value={forM.password}
+          value={form.password}
           type="password"
           placeholder="Contraseña"
         />
@@ -174,7 +141,7 @@ export default function LoginBox() {
           id="nombre"
           onChange={HandleChange}
           name="nombre"
-          value={forM.nombre}
+          value={form.nombre}
           type="text"
           placeholder="Nombre"
         />
@@ -183,7 +150,7 @@ export default function LoginBox() {
           id="apellido"
           onChange={HandleChange}
           name="apellido"
-          value={forM.apellido}
+          value={form.apellido}
           type="text"
           placeholder="Apellido"
         />
@@ -194,7 +161,7 @@ export default function LoginBox() {
           id="fechaNacimiento"
           onChange={HandleChange}
           name="fechaNacimiento"
-          value={forM.fechaNacimiento}
+          value={form.fechaNacimiento}
           type="date"
           placeholder="fecha de nacimiento"
         />
@@ -203,7 +170,7 @@ export default function LoginBox() {
           id="correo"
           onChange={HandleChange}
           name="email"
-          value={forM.email}
+          value={form.email}
           type="email"
           placeholder="Email"
         />
@@ -212,7 +179,7 @@ export default function LoginBox() {
           id="contraseña"
           onChange={HandleChange}
           name="password"
-          value={forM.password}
+          value={form.password}
           type="password"
           placeholder="Contraseña"
         />

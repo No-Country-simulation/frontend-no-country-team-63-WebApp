@@ -1,6 +1,6 @@
 "use client";
 
-import { nav_data } from "@/mock/mock";
+import { nav_data } from "@/_mock/mock";
 
 export default function Navbar() {
   return (
@@ -14,11 +14,11 @@ export default function Navbar() {
         <button className="hamburger" id="hamburgerBtn">☰</button>
 
         <ul className="nav-links" id="navLinks">
-          {
-            nav_data.map(e => (
-              <a href="#" key={e.id}>{e.data}</a>
-            ))
-          }
+          {nav_data.map(e => (
+            <li key={e.id}>
+              <a href="#">{e.data}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
