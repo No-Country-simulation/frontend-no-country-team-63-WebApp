@@ -1,6 +1,7 @@
 "use client";
 
-import { nav_data } from "@/_mock/mock";
+import { nav_data } from "@/mock/mock";
+
 
 export default function Navbar() {
   return (

@@ -1,20 +1,6 @@
 {
   "recordatorio": [
     {
-      "nombreEvento": "Panchito Peludo",
-      "tipoEvento": "Desparacitacion",
-      "fecha": "2025-12-11",
-      "hora": "18:34",
-      "id": "c49f"
-    },
-    {
-      "id": "7d80",
-      "nombreEvento": "Jorjito",
-      "tipoEvento": "Vacunacion",
-      "fecha": "2025-12-26",
-      "hora": "13:26"
-    },
-    {
       "id": "688c",
       "nombreEvento": "Pancho",
       "tipoEvento": "Desparacitacion",

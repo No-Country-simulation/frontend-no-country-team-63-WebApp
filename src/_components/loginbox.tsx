@@ -5,10 +5,10 @@ import { Form } from "react-hook-form";
 
 import ButtonComponent from "./ui/ButtonComponent";
 import InputComponent from "./ui/InputComponent";
-import { RegisterPerson } from "@/_types/register";
-import { form_state_register} from "@/_mock/mock";
-import { api_general_root } from "@/_service/api-general";
 import LabelComponent from "./ui/LabelComponent";
+import { RegisterPerson } from "@/types/register";
+import { form_state_register } from "@/mock/mock";
+import { api_general_root } from "@/service/api-general";
 
 export default function LoginBox() {
   const [tab, setTab] = useState<"login" | "register">("login");
