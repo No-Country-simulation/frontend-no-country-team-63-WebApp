@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import NavBar_logged from "@/_components/NavBar_logged";
-import { nav_data_pet } from "@/_mock/mock";
 import Info_pet from "@/_components/Info_pet";
 import Next_events from "@/_components/Next_Events";
+import {  nav_data_pet } from "@/mock/mock";
 
 export default function Dashboard() {
   return (
