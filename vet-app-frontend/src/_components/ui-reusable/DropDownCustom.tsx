@@ -19,11 +19,9 @@ const DropDownCustom = ({
   handleDetails,
   children,
 }: CustomOptionsTypes) => {
-  // const DropDownCustom = ({children}: {children: React.ReactNode} ) => {
   return (
-    // absolute top-[3rem] right-[1rem]
-    <div className="">
-      <DropdownMenu>
+    <div className="cursor-pointer z-1000">
+      <DropdownMenu >
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"

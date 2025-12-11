@@ -6,7 +6,6 @@ const DetailsComponent = (
 ) => {
   return (
     <div>
-      <p>Detalles</p>
       {/* {data.nombreEvento} */}
     </div>
   );

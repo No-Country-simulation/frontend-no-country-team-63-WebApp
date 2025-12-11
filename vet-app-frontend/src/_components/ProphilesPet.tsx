@@ -14,14 +14,15 @@ const ProphilesPet = ({handleEdit: handEdit, handleDelete: handDel} :ActionsColu
 
   const { openModal } = useModalStore();
   return (
-    <div className="flex gap-2 justify-center max-w-[1000px] mx-auto w-full relative">
+    <div className="flex flex-wrap justify-between max-w-[1000px] mx-auto w-full relative ">
       {animals.map((e) => (
         <div
           key={e.id}
           className=" hover:scale-100 scale-95  transition-all .3s ease-in-out"
         >
           <div className="absolute top-[3rem] right-[1rem] cursor-pointer">
-            <DropDownCustom handleEdit={() =>  
+            <DropDownCustom 
+            handleEdit={() =>  
               handEdit({
                 entityTypes: "perfil animal",
                 Type: "ver"
@@ -31,7 +32,7 @@ const ProphilesPet = ({handleEdit: handEdit, handleDelete: handDel} :ActionsColu
             </DropDownCustom>
           </div>
 
-          <img className="rounded-3xl" src={e.img} alt="" />
+          <img className="rounded-3xl z-10" src={e.img} alt="" />
         </div>
       ))}
     </div>
