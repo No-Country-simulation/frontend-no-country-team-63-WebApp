@@ -8,13 +8,13 @@ import {  nav_data_pet } from "@/mock/mock";
 
 export default function Dashboard() {
   return (
-    <div className="p-8">
+    <div className="">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
-        <NavBar_logged items={nav_data_pet} />
+        <NavBar_logged  />
         {/* Contenedor completo que ocupa todo el ancho */}
         <div className="w-full flex justify-center !mt-2">
 

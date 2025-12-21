@@ -9,12 +9,14 @@ import LabelComponent from "./ui/LabelComponent";
 import { RegisterPerson } from "@/types/register";
 import { form_state_register } from "@/mock/mock";
 import { api_general_root } from "@/service/api-general";
+import { useRouter } from "next/navigation";
 
 export default function LoginBox() {
   const [tab, setTab] = useState<"login" | "register">("login");
-
+  
   const [form, setform] = useState<RegisterPerson>(form_state_register);
-
+  const router = useRouter();
+  
   // real vh fix
   useEffect(() => {
     function updateVH() {
@@ -84,7 +86,16 @@ export default function LoginBox() {
     };
 
     fetch(`${api_general_root}/auth/login`, options)
-      .then((req) => req.json())
+      .then(async (req) => {
+        const data = await req.json();
+
+        if (req.status === 200) {
+          router.push("/layout/inicio");
+
+        }
+        console.log(data)
+        return data;
+      })
       .then((res) => console.log(res));
   };
 

@@ -1,6 +1,6 @@
 
 export type Modaltypes = "ver" | "edit" | "crear" | "eliminar" 
-export type EntityTypes = "recordatorios" | "alert" | "details"
+export type EntityTypes = "recordatorios" | "alert" | "details" | "medicine"
 
 export interface ActionsColumnsProps {
   handleEdit: ({ entityTypes, Type, data }: ModalProps) => void;

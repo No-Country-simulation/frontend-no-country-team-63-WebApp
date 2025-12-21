@@ -8,6 +8,7 @@ const ProphilesPet = ({
   handleEdit: handEdit,
   handleDelete: handDel,
 }: ActionsColumnsProps) => {
+  
   const animals = [
     { id: 0, img: "/animal.png" },
     { id: 1, img: "/animal.png" },
@@ -18,9 +19,9 @@ const ProphilesPet = ({
   return (
     <div className="flex flex-wrap justify-between max-w-[1000px] mx-auto w-full relative ">
       {animals.map((e) => (
-        <Link href="/perfil">
+        <Link href="/perfil" key={e.id}>
           <div
-            key={e.id}
+            
             className=" hover:scale-100 scale-95  transition-all .3s ease-in-out"
           >
             <div className="absolute top-[3rem] right-[1rem] cursor-pointer">

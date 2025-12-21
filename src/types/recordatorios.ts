@@ -13,3 +13,7 @@ export type Payment = {
   status: "pending" | "processing" | "success" | "failed"
   email: string
 }
+export interface PutData {
+  id: string;
+  body: IRecordatorios;
+}
