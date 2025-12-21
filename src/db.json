@@ -6,6 +6,13 @@
       "tipoEvento": "Desparacitacion",
       "fecha": "2025-12-13",
       "hora": "13:40"
+    },
+    {
+      "id": "dcee",
+      "nombreEvento": "Jorgito",
+      "tipoEvento": "Vacunacion",
+      "fecha": "2025-12-24",
+      "hora": "12:18"
     }
   ]
 }

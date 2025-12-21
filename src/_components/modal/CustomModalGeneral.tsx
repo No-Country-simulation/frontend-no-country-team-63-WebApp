@@ -8,6 +8,7 @@ const FormsGeneral = {
   recordatorios: lazy(() => import("@/_components/forms/FormRecordatorio")),
   alert: lazy(() => import("@/_components/ui-reusable/AlertComponent")),
   details: lazy(() => import("@/_components/ui-reusable/DetailsComponent")),
+  medicine: lazy(() => import("@/_components/forms/FormMedicamento")),
 };
 // {children}: {children: React.ReactNode}
 const CustomModalGeneral = ( ) => {
