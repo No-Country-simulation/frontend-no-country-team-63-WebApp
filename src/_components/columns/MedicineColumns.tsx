@@ -11,45 +11,45 @@ import { PiBoneDuotone } from "react-icons/pi";
 import { ActionsColumnsProps } from "@/types/TypesActions";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { IMedicine } from "@/types/medicine";
 
-export const columns = ({
+export const columnsMedicine = ({
   handleEdit: handEdit,
   handleDelete: handDel,
   handleDetails: handDet
-}: ActionsColumnsProps): ColumnDef<IRecordatorios>[] => [
-
+}: ActionsColumnsProps): ColumnDef<IMedicine>[] => [
   {
-    accessorKey: "nombreEvento",
-    header: "Nombre animal",
+    accessorKey: "nombre",
+    header: "Nombre medicamento",
     cell: ({ row }) => {
-      const { nombreEvento } = row.original;
-      return <div className="capitalize">{nombreEvento}</div>;
+      const { nombre } = row.original;
+      return <div className="capitalize">{nombre}</div>;
     },
   },
-  // {
-  //   accessorKey: "tipoEvento",
-  //   header: "Tipo de Evento",
-  //   cell: ({ row }) => {
-  //     const { tipoEvento } = row.original;
-  //     return <div className="capitalize">{tipoEvento}</div>;
-  //   },
-  // },
-  // {
-  //   accessorKey: "fecha",
-  //   header: "Fecha de evento",
-  //   cell: ({ row }) => {
-  //     const { fecha } = row.original;
-  //     return <div className="capitalize">{fecha}</div>;
-  //   },
-  // },
-  // {
-  //   accessorKey: "hora",
-  //   header: "Hora de evento",
-  //   cell: ({ row }) => {
-  //     const { hora } = row.original;
-  //     return <div className="capitalize">{hora}</div>;
-  //   },
-  // },
+  {
+    accessorKey: "fabricante",
+    header: "Nombre de fabricante",
+    cell: ({ row }) => {
+      const { fabricante } = row.original;
+      return <div className="capitalize">{fabricante}</div>;
+    },
+  },
+  {
+    accessorKey: "tipo",
+    header: "Tipo del medicamento",
+    cell: ({ row }) => {
+      const { tipo } = row.original;
+      return <div className="capitalize">{tipo}</div>;
+    },
+  },
+  {
+    accessorKey: "intervaloDosis",
+    header: "Intervalo de Dosis",
+    cell: ({ row }) => {
+      const { intervaloDosis } = row.original;
+      return <div className="capitalize">{intervaloDosis}</div>;
+    },
+  },
 
   {
     id: "actions",

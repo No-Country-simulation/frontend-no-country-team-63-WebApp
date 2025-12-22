@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    padding: 12px;
+    background-color: #b1b1b1;
+    border-bottom: 1px solid #d4d4d4;
+    width: 100%;
+  }
+
 .modal-overlay {
   position: fixed;
   top: 0;

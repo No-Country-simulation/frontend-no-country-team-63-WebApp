@@ -1,16 +1,20 @@
 import { MedicineEntity } from "@/types/medicine";
-import { api_mock, api_general } from "../api-general";
-import { IRecordatorios, PutData } from "@/types/recordatorios";
+import {  api_general } from "../api-general";
+import {  PutData } from "@/types/recordatorios";
 
 
 
-export const postMedicine = async ( body: string, token: string) => {
-	const data = await api_general.post<MedicineEntity>('/appointments', body, {
-     headers: {
-        Authorization: "Bearer "+ token
-      }
-  });
-	return data;
+export const postMedicine = async ( body: MedicineEntity, token: string) => {
+  try {
+    const data = await api_general.post<MedicineEntity>('/medicament', body, {
+       headers: {
+          Authorization: "Bearer "+ token
+        }
+    });
+    return data;
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 

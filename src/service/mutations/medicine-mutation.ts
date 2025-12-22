@@ -23,18 +23,18 @@ export const MedicineMutations = () => {
 
   const queryClient = useQueryClient();
   
-  // const mutationPostMedicine = useMutation({
-  //   mutationFn: (body: MedicineEntity, token: string) => {
-  //     return postMedicine(body, token);
-  //   },
-  //   onSuccess: () => {
-  //     queryClient.invalidateQueries({
-  //       queryKey: ["key_recordatorio", token],
-  //     });
-  //     console.log("exitoso");
-  //     alert("registro de recordatorio exitoso");
-  //   },
-  // });
+  const mutationPostMedicine = useMutation({
+    mutationFn: (body: MedicineEntity, token: string) => {
+      return postMedicine(body, token);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["key_recordatorio", token],
+      });
+      console.log("exitoso");
+      alert("registro de medicina exitoso");
+    },
+  });
 
   const mutationDeleteMedicine = useMutation({
     mutationFn: (id: string) => {
@@ -45,7 +45,7 @@ export const MedicineMutations = () => {
         queryKey: ["key_recordatorio"],
       });
       console.log("exitoso");
-      alert("de eliminó el recordatorio");
+      alert("de eliminó la medicina");
     },
   });
   const mutationPutMedicine = useMutation({
@@ -57,15 +57,14 @@ export const MedicineMutations = () => {
         queryKey: ["key_recordatorio"],
       });
       console.log("exitoso");
-      alert("se actualizó el recordatorio");
+      alert("se actualizó la medicina");
     },
   });
 
   return {
-    // mutationPostMedicine,
+    mutationPostMedicine,
     queryClient,
     mutationDeleteMedicine,
-    mutationPutMedicine,
-    token
+    mutationPutMedicine
   };
 };

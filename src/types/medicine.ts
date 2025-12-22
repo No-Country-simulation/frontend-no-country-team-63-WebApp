@@ -1,5 +1,5 @@
 export interface MedicineEntity {
-  content: Medicine[]
+  content: IMedicine[]
   pageable: Pageable
   totalPages: number
   totalElements: number
@@ -12,7 +12,7 @@ export interface MedicineEntity {
   empty: boolean
 }
 
-export interface Medicine {
+export interface IMedicine {
   id: number
   nombre: string
   tipo: string
