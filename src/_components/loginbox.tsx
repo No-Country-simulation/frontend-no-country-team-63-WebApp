@@ -10,12 +10,17 @@ import { useRouter } from "next/navigation";
 import InputComponent from "./ui-reusable/InputComponent";
 import ButtonComponent from "./ui-reusable/ButtonComponent";
 import LabelComponent from "./ui-reusable/LabelComponent";
+import { authStore } from "@/store/token-store";
 
 export default function LoginBox() {
   const [tab, setTab] = useState<"login" | "register">("login");
 
   const [form, setform] = useState<RegisterPerson>(form_state_register);
   const router = useRouter();
+
+
+  const { removeToken } = authStore();
+  removeToken();
 
   // real vh fix
   useEffect(() => {

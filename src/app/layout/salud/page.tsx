@@ -46,8 +46,6 @@ const page = () => {
         }
       ),
   });
-  // console.log("token capturado")
-  // console.log(token.accessToken)
   console.log("respuesta de la api");
   console.log(dataMedApi?.data?.content);
 

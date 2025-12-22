@@ -48,6 +48,6 @@ export const authStore = create<store>()((set) => ({
   setToken: (token: Tokens) => set(() => ({ token })),
   removeToken() {
     window.localStorage.removeItem("token-login");
-    return { token: "" };
+    return { token: null };
   },
 }));

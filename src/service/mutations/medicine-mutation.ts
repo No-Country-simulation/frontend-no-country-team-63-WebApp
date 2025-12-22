@@ -63,6 +63,7 @@ export const MedicineMutations = () => {
 
   return {
     // mutationPostMedicine,
+    queryClient,
     mutationDeleteMedicine,
     mutationPutMedicine,
     token
