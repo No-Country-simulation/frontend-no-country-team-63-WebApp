@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react";
 import { Form } from "react-hook-form";
 
-import ButtonComponent from "./ui/ButtonComponent";
-import InputComponent from "./ui/InputComponent";
-import LabelComponent from "./ui/LabelComponent";
 import { RegisterPerson } from "@/types/register";
 import { form_state_register } from "@/mock/mock";
 import { api_general_root } from "@/service/api-general";
 import { useRouter } from "next/navigation";
+import InputComponent from "./ui-reusable/InputComponent";
+import ButtonComponent from "./ui-reusable/ButtonComponent";
+import LabelComponent from "./ui-reusable/LabelComponent";
 
 export default function LoginBox() {
   const [tab, setTab] = useState<"login" | "register">("login");

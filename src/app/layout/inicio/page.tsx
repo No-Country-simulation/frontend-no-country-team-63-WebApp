@@ -1,14 +1,9 @@
 "use client";
-import React from "react";
 
 import { columns } from "@/_components/columns/RecordatorioColumns";
-import CustomModalGeneral from "@/_components/modal/CustomModalGeneral";
-import NavbarLayout from "@/_components/navbar-layout";
-import NavBar_logged from "@/_components/NavBar_logged";
 import ProphilesPet from "@/_components/ProphilesPet";
 import { DataTableDemo } from "@/_components/tables/TablesRecordatorios";
 import ButtonGreen from "@/_components/ui-reusable/ButtonGreen";
-import { data, mockRecordatorios } from "@/mock/json-recordatorios";
 import { datamock } from "@/mock/mock";
 import { RecordatoriosMutations } from "@/service/mutations/recordatorio-mutation";
 import { useModalStore } from "@/store/modal-store";
