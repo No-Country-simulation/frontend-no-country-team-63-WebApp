@@ -1,4 +1,5 @@
 "use client";
+import z from "zod";
 import {
   Form,
   FormControl,
@@ -9,46 +10,50 @@ import {
 } from "@/components/ui/form";
 import InputComponent from "../ui-reusable/InputComponent";
 import ButtonComponent from "../ui-reusable/ButtonComponent";
-import { RecordatoriosMutations } from "@/service/mutations/recordatorio-mutation";
-import { recordatoriosformSchema } from "@/schemas/recordatorios";
+import { MedicineMutations } from "@/service/mutations/medicine-mutation";
 import { useForm } from "react-hook-form";
-import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useModalStore } from "@/store/modal-store";
 import { useEffect } from "react";
-import { IRecordatorios } from "@/types/recordatorios";
+import { MedicineformSchema } from "@/schemas/medicine.schema";
+import { IMedicine } from "@/types/medicine";
+import { authStore } from "@/store/token-store";
 
 const FormRecordatorio = () => {
-  // const {form, onSubmit} = useRecordatorioForm()
   const { closeModal, data, openModal, Type } = useModalStore();
-  const { mutationPostRecordatorios, mutationPutRecordatorios } =
-    RecordatoriosMutations();
+  const {mutationPostMedicine, mutationPutMedicine} = MedicineMutations();
+const {token} = authStore()
 
-  const form = useForm<z.infer<typeof recordatoriosformSchema>>({
-    resolver: zodResolver(recordatoriosformSchema),
+  const form = useForm<z.infer<typeof MedicineformSchema>>({
+    resolver: zodResolver(MedicineformSchema),
     defaultValues: {
-      nombreEvento: "",
-      tipoEvento: "",
-      fecha: "",
-      hora: "",
+      descripcion: "",
+      fabricante: "",
+      intervaloDosis: 0,
+      nombre: "",
+      tipo: "",
     },
   });
-  function onSubmit(values: z.infer<typeof recordatoriosformSchema>) {
-    if ( Type === "edit" && (data as IRecordatorios).id) {
+  function onSubmit(values: z.infer<typeof MedicineformSchema>) {
+    if (Type === "edit" && (data as IMedicine).id) {
       const put_object = {
-        id: (data as IRecordatorios).id,
+        id: (data as IMedicine).id,
         body: values,
       };
-      mutationPutRecordatorios.mutate(put_object);
+      // mutationPostMedicine.mutate(put_object);
       console.log("accion editar");
     }
-    mutationPostRecordatorios.mutate(values);
+    const post_med = {
+      body: values,
+      token: token.accessToken
+    }
+    mutationPostMedicine.mutate(post_med);
+    console.log(post_med)
     console.log("accion crear");
   }
 
   useEffect(() => {
     if (data) {
-      // console.log(data);
       form.reset(data);
     }
   }, [data, form]);
@@ -58,10 +63,10 @@ const FormRecordatorio = () => {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
-          name="nombreEvento"
+          name="nombre"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nombre del animal</FormLabel>
+              <FormLabel>Nombre del medicamento</FormLabel>
               <FormControl>
                 <InputComponent placeholder="Nombre" {...field} />
               </FormControl>
@@ -70,13 +75,13 @@ const FormRecordatorio = () => {
           )}
         />
         <FormField
-          name="tipoEvento"
+          name="fabricante"
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Elige el tipo de evento</FormLabel>
+              <FormLabel>Escribe el nombre del fabricante</FormLabel>
               <FormControl>
-                <InputComponent placeholder="Evento" {...field} />
+                <InputComponent placeholder="fabricante" {...field} />
               </FormControl>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -84,12 +89,12 @@ const FormRecordatorio = () => {
         />
         <FormField
           control={form.control}
-          name="fecha"
+          name="tipo"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Fecha del recordatorio</FormLabel>
+              <FormLabel>Escribe el tipo del medicamento</FormLabel>
               <FormControl>
-                <InputComponent placeholder="Fecha" type="date" {...field} />
+                <InputComponent placeholder="tipo" type="string" {...field} />
               </FormControl>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -97,12 +102,17 @@ const FormRecordatorio = () => {
         />
         <FormField
           control={form.control}
-          name="hora"
+          name="intervaloDosis"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Hora del recordatorio</FormLabel>
+              <FormLabel>Escribe el intervalo de las dosis</FormLabel>
               <FormControl>
-                <InputComponent placeholder="Hora" type="time" {...field} />
+                <InputComponent
+                  placeholder="intervalo"
+                  type="number"
+                  {...field}
+                  onChange={(e) => field.onChange(Number(e.target.value))}
+                />
               </FormControl>
               <FormMessage className="text-red-500" />
             </FormItem>

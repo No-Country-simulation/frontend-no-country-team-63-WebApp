@@ -10,7 +10,7 @@ import {
 import InputComponent from "../ui-reusable/InputComponent";
 import ButtonComponent from "../ui-reusable/ButtonComponent";
 import { RecordatoriosMutations } from "@/service/mutations/recordatorio-mutation";
-import { recordatoriosformSchema } from "@/schemas/recordatorios";
+import { recordatoriosformSchema } from "@/schemas/recordatorios.schema";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";

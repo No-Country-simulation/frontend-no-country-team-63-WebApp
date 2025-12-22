@@ -14,7 +14,6 @@ export default function Dashboard() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
-        <NavBar_logged  />
         {/* Contenedor completo que ocupa todo el ancho */}
         <div className="w-full flex justify-center !mt-2">
 

@@ -3,20 +3,25 @@
 import { useState, useEffect } from "react";
 import { Form } from "react-hook-form";
 
-import ButtonComponent from "./ui/ButtonComponent";
-import InputComponent from "./ui/InputComponent";
-import LabelComponent from "./ui/LabelComponent";
 import { RegisterPerson } from "@/types/register";
 import { form_state_register } from "@/mock/mock";
 import { api_general_root } from "@/service/api-general";
 import { useRouter } from "next/navigation";
+import InputComponent from "./ui-reusable/InputComponent";
+import ButtonComponent from "./ui-reusable/ButtonComponent";
+import LabelComponent from "./ui-reusable/LabelComponent";
+import { authStore } from "@/store/token-store";
 
 export default function LoginBox() {
   const [tab, setTab] = useState<"login" | "register">("login");
-  
+
   const [form, setform] = useState<RegisterPerson>(form_state_register);
   const router = useRouter();
-  
+
+
+  const { removeToken } = authStore();
+  removeToken();
+
   // real vh fix
   useEffect(() => {
     function updateVH() {
@@ -90,10 +95,18 @@ export default function LoginBox() {
         const data = await req.json();
 
         if (req.status === 200) {
+          localStorage.setItem(
+            "token-login",
+            JSON.stringify({
+              accessToken: data.accessToken,
+              refreshToken: data.refreshToken,
+            })
+          );
           router.push("/layout/inicio");
-
+        } else if (!req.ok) {
+          throw new Error("Login inválido");
         }
-        console.log(data)
+        console.log(data);
         return data;
       })
       .then((res) => console.log(res));

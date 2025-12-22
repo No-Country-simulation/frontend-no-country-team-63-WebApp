@@ -2,7 +2,7 @@
 import z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { recordatoriosformSchema } from "@/schemas/recordatorios";
+import { recordatoriosformSchema } from "@/schemas/recordatorios.schema";
 import { RecordatoriosMutations } from "@/service/mutations/recordatorio-mutation";
 
 export const useRecordatorioForm = () => {

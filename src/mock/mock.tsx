@@ -20,8 +20,8 @@ export const form_state_login = {
 /* usar data para acceder a otra ruta*/
 export const nav_data_pet = [
   { id: 1, data: "Inicio", icon: "Icon_inicio.png", path: "/layout/inicio" },
-  { id: 2, data: "Registro salud", icon: "Icon_registro_salud.png", path: "/salud" },
-  { id: 3, data: "Nutrición", icon: "Icon_nutricion.png", path: "/Nutricion" },
+  { id: 2, data: "Registro salud", icon: "Icon_registro_salud.png", path: "/layout/salud" },
+  { id: 3, data: "Nutrición", icon: "Icon_nutricion.png", path: "/layout/nutricion" },
   { id: 4, data: "Notificación", icon: "Icon_notificacion.png", path: "/Notificacion" },
 ];
  export const datamock = [

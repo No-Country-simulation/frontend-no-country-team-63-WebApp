@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { nav_data_pet } from "@/mock/mock";
+import { authStore } from "@/store/token-store";
+import { MedicineMutations } from "@/service/mutations/medicine-mutation";
 
 export default function NavBar_logged() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -14,14 +16,17 @@ export default function NavBar_logged() {
     name: "Juan Pérez",
     photo: "/profile_photo.png",
   };
-
+  // const { queryClient } = MedicineMutations();
   const [fadeOut, setFadeOut] = useState(false);
+ 
 
   const handleLogout = () => {
     setFadeOut(true); // activa animación
+    // queryClient.clear();
     setTimeout(() => {
       router.push("/"); // redirige después de 400ms
     }, 400);
+    // removeToken();
   };
 
   return (
@@ -40,7 +45,8 @@ export default function NavBar_logged() {
               <Link href={item.path} className="nav-link">
                 <div
                   className={`icon-text text-[#919090]  ${
-                    path === item.path && "text-[#fff] decoration-1 decoration-[#fff] decoration-dotted"
+                    path === item.path &&
+                    "text-[#fff] decoration-1 decoration-[#fff] decoration-dotted"
                   }`}
                 >
                   <img
