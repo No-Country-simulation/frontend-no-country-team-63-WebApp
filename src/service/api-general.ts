@@ -10,12 +10,12 @@ export const api_mock = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_URL_MOCK}`,
 });
 
-api_general.interceptors.request.use((e) => {
-  const { tokens } = authStore.getState();
+// api_general.interceptors.request.use((e) => {
+//   const { tokens } = authStore.getState();
 
-  if (tokens?.accessToken) {
-    e.headers.Authorization = `Bearer ${tokens.accessToken}`;
-  }
+//   if (tokens?.accessToken) {
+//     e.headers.Authorization = `Bearer ${tokens.accessToken}`;
+//   }
 
-  return e;
-});
+//   return e;
+// });

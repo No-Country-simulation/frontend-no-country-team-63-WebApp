@@ -5,20 +5,22 @@ import { IRecordatorios, PutData } from "@/types/recordatorios";
 
 
 export const postMedicine = async ( body: string, token: string) => {
-	const data = await api_general.post<MedicineEntity>('/appointments', body, token);
+	const data = await api_general.post<MedicineEntity>('/appointments', body, {
+     headers: {
+        Authorization: "Bearer "+ token
+      }
+  });
 	return data;
 };
 
-const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmlzdGlhbjdAZ21ha…zQyfQ.1acTXAAG_s6_kk7CHtUf5ryzerqJazgHa48oiFnSZs0"
 
-export const getMedicine = async () => {
+export const getMedicine = async (token: string) => {
   try {
-    const res = await api_general.get<MedicineEntity>("/medicament/VACUNA?page=0&size=3&orderBy=true", {
+    const res = await api_general.get<MedicineEntity>("/medicament", {
       headers: {
-        Authorization: "Bearer " + token
+        Authorization: "Bearer "+ token
       }
     });
-    console.log(res)
     return res.data;
   } catch (error) {
     console.log(error);

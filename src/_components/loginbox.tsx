@@ -13,10 +13,10 @@ import LabelComponent from "./ui-reusable/LabelComponent";
 
 export default function LoginBox() {
   const [tab, setTab] = useState<"login" | "register">("login");
-  
+
   const [form, setform] = useState<RegisterPerson>(form_state_register);
   const router = useRouter();
-  
+
   // real vh fix
   useEffect(() => {
     function updateVH() {
@@ -90,10 +90,18 @@ export default function LoginBox() {
         const data = await req.json();
 
         if (req.status === 200) {
+          localStorage.setItem(
+            "token-login",
+            JSON.stringify({
+              accessToken: data.accessToken,
+              refreshToken: data.refreshToken,
+            })
+          );
           router.push("/layout/inicio");
-
+        } else if (!req.ok) {
+          throw new Error("Login inválido");
         }
-        console.log(data)
+        console.log(data);
         return data;
       })
       .then((res) => console.log(res));

@@ -18,30 +18,23 @@ import { MedicineEntity } from "@/types/medicine";
 import { api_general } from "../api-general";
 
 export const MedicineMutations = () => {
-  // const { tokens } = authStore();
-  // console.log(tokens);
-  const accessToken = authStore((s) => s.tokens?.accessToken);
+  const { token } = authStore();
+
 
   const queryClient = useQueryClient();
-
-  const GetQueryMedicine = useQuery({
-    queryKey: ["key_recordatorio"],
-    queryFn: getMedicine,
-    enabled: !!accessToken,
-  });
-
-  const mutationPostMedicine = useMutation({
-    mutationFn: (body: MedicineEntity, token: string) => {
-      return postMedicine(body, token);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: ["key_recordatorio", token],
-      });
-      console.log("exitoso");
-      alert("registro de recordatorio exitoso");
-    },
-  });
+  
+  // const mutationPostMedicine = useMutation({
+  //   mutationFn: (body: MedicineEntity, token: string) => {
+  //     return postMedicine(body, token);
+  //   },
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries({
+  //       queryKey: ["key_recordatorio", token],
+  //     });
+  //     console.log("exitoso");
+  //     alert("registro de recordatorio exitoso");
+  //   },
+  // });
 
   const mutationDeleteMedicine = useMutation({
     mutationFn: (id: string) => {
@@ -69,9 +62,9 @@ export const MedicineMutations = () => {
   });
 
   return {
-    GetQueryMedicine,
-    mutationPostMedicine,
+    // mutationPostMedicine,
     mutationDeleteMedicine,
     mutationPutMedicine,
+    token
   };
 };

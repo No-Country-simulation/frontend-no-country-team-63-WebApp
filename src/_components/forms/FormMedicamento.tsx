@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/form";
 import InputComponent from "../ui-reusable/InputComponent";
 import ButtonComponent from "../ui-reusable/ButtonComponent";
-import { RecordatoriosMutations } from "@/service/mutations/recordatorio-mutation";
+import { MedicineMutations } from "@/service/mutations/medicine-mutation";
 import { recordatoriosformSchema } from "@/schemas/recordatorios";
 import { useForm } from "react-hook-form";
 import z from "zod";
@@ -19,10 +19,8 @@ import { useEffect } from "react";
 import { IRecordatorios } from "@/types/recordatorios";
 
 const FormRecordatorio = () => {
-  // const {form, onSubmit} = useRecordatorioForm()
   const { closeModal, data, openModal, Type } = useModalStore();
-  const { mutationPostRecordatorios, mutationPutRecordatorios } =
-    RecordatoriosMutations();
+  const { GetQueryMedicine, mutationPostMedicine } =  MedicineMutations();
 
   const form = useForm<z.infer<typeof recordatoriosformSchema>>({
     resolver: zodResolver(recordatoriosformSchema),
@@ -39,10 +37,10 @@ const FormRecordatorio = () => {
         id: (data as IRecordatorios).id,
         body: values,
       };
-      mutationPutRecordatorios.mutate(put_object);
+      // mutationPostMedicine.mutate(put_object);
       console.log("accion editar");
     }
-    mutationPostRecordatorios.mutate(values);
+    // mutationPostMedicine.mutate(values);
     console.log("accion crear");
   }
 

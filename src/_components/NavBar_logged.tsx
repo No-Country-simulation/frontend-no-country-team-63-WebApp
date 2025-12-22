@@ -20,6 +20,7 @@ export default function NavBar_logged() {
   const handleLogout = () => {
     setFadeOut(true); // activa animación
     setTimeout(() => {
+      
       router.push("/"); // redirige después de 400ms
     }, 400);
   };

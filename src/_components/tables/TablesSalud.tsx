@@ -22,15 +22,26 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { useState } from "react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
 }
 
-export function DataTableSalud<TData, TValue>({ columns,  data,}: DataTableProps<TData, TValue>) {
-
-// export function DataTableDemo() {
+export function DataTableSalud<TData, TValue>({
+  columns,
+  data,
+}: DataTableProps<TData, TValue>) {
+  // export function DataTableDemo() {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -99,6 +110,7 @@ export function DataTableSalud<TData, TValue>({ columns,  data,}: DataTableProps
           )}
         </TableBody>
       </Table>
+      
     </div>
   );
 }
